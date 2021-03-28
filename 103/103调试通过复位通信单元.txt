@@ -1,0 +1,89 @@
+#include  "timer.h"
+#include "sys.h"
+#include "delay.h"
+#include "usart.h"
+#include "led.h"
+#include "beep.h"
+#include "key.h"
+
+
+
+
+//VNC
+
+int main(void)    //?¯足足?車谷??“那㊣?¯?車那??D??  stm32-modbus米?????
+{ 
+ 
+	u8 t;
+	u8 len;	
+	u16 times=0;  
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//谷豕???米赤3?D??車??豕??﹞?℅谷2
+	delay_init(168);		//?車那㊣3?那??‘ 
+	uart_init(115200);	//∩??迆3?那??‘2“足??那?a115200--?a?迄?迄?豕?足
+	LED_Init();		  		//3?那??‘車?LED芍??車米?車2?t?車?迆 
+  TIM3_Int_Init(5000-1,8400-1);//500-1米¯那?赤“1y//50--//500//10//50//?“那㊣?¯那㊣?車84M㏒?﹞??米?米那y8400㏒??迄辰?84M/8400=10Khz米???那y?米?那㏒???那y5000∩??a500ms 
+	
+  	printf("AT\r\n");//?豕﹞⊿AT㏒?豕?GSM?㏒?谷℅??‘??豕?2“足??那?a9600
+//	delay_ms(1000);
+//	printf("AT&F\r\n");
+//	delay_ms(1000);
+//	printf("AT+CGCLASS=\"B\"\r\n");
+//	delay_ms(1000);
+//	
+//	printf("AT+CGDCONT=1,\"IP\",\"CMNET\"\r\n");
+//	delay_ms(1000);
+//	
+//	printf("AT+CGATT=1\r\n");
+//	delay_ms(1000);
+//	
+//	printf("AT+CLPORT=\"TCP\",\"2000\"\r\n");	
+//	delay_ms(1000);
+	while(1)
+	{
+		//if(scount==10)
+		{
+			//next1: UART_Send(sbuf,wLen);
+		 
+		}
+		//  USART_SendData(UART4, 10);
+	    //	printf("nihao\n");
+		  GPIO_SetBits(GPIOC,GPIO_Pin_8);
+		//  delay_ms(1000);
+			GPIO_ResetBits(GPIOC,GPIO_Pin_8);
+		if(receBuf[1]==0x40)
+		{
+		 delay_ms(0);
+		}
+//		if(receBuf[1]==0x40)
+//		{
+//		delay_ms(0);
+//		
+//		}
+		
+//		  USART_SendData(UART4,0x05);
+//			printf("AT\r\n");
+//      GPIO_ResetBits(GPIOB,GPIO_Pin_5);//米?芍芍 LED3
+//			printf("AT+CIPSTART=\"TCP\",\"221.226.69.234\",\"6002\"\r\n");	//DT???a辰a﹞⊿?赤??米?IPo赤???迆
+//			delay_ms(1000);delay_ms(1000);delay_ms(1000);delay_ms(1000);
+
+//			printf("AT+CIPSEND\r\n");
+//			delay_ms(1000);
+
+//			printf("SIM800﹞⊿?赤??米???米?那y?Y");
+//			delay_ms(1000);
+
+//			printf("%c",0x1a);
+//			delay_ms(1000);
+		
+	//		printf("AT+CIPCLOSE=1\r\n");
+//			  delay_ms(1000);
+		
+	//		printf("AT+CIPSHUT\r\n");
+	//		delay_ms(1000);
+	
+	}
+}
+
+
+
+
